@@ -174,6 +174,22 @@ function criarContadorDeAnalises() {
   };
 }
 
+function exibirResultados(resultadosDasVagas) {
+  for (const resultado of resultadosDasVagas) {
+    console.log("----------------------------------------");
+    console.log(`Empresa: ${resultado.empresa}`);
+    console.log(`Cargo: ${resultado.cargo}`);
+    console.log(`Compatibilidade: ${resultado.percentual}%`);
+    console.log(`Classificacao: ${resultado.classificacao}`);
+    console.log(
+      `Habilidades encontradas: ${resultado.habilidadesEncontradas.join(", ")}`
+    );
+    console.log(
+      `Habilidades faltantes: ${resultado.habilidadesFaltantes.join(", ") || "Nenhuma"}`
+    );
+  }
+}
+
 function buscarVagasSimuladas() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -207,7 +223,7 @@ async function iniciarSistema() {
   });
 
   console.log("Resultado de todas as vagas:");
-  console.log(resultados);
+  exibirResultados(resultados);
 
   console.log("Vaga mais compativel:");
   console.log(melhorVaga);

@@ -77,7 +77,7 @@ A classificacao segue estes intervalos:
 | Arrow function | Funcao `analisarVagas` e funcoes usadas nos metodos de array |
 | `if-else` | Classificacao do percentual de compatibilidade |
 | Operadores | Calculo do percentual e comparacoes |
-| Repeticao | `forEach` para contar as analises realizadas |
+| Repeticao | `for...of` para exibir resultados e `forEach` para contar analises |
 | `filter` | Habilidades encontradas e faltantes |
 | `map` | Analise de todas as vagas |
 | `reduce` | Melhor vaga e lista de habilidades faltantes |
