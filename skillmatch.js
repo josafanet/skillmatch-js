@@ -81,13 +81,19 @@ function calcularCompatibilidade(perfilCandidato, vaga) {
   };
 }
 
+const analisarVagas = (perfilCandidato, listaDeVagas) => {
+  return listaDeVagas.map((vaga) =>
+    calcularCompatibilidade(perfilCandidato, vaga)
+  );
+};
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
 console.log("Vagas cadastradas:");
 console.log(vagas);
 
-const resultadoPrimeiraVaga = calcularCompatibilidade(candidato, vagas[0]);
+const resultados = analisarVagas(candidato, vagas);
 
-console.log("Resultado da primeira vaga:");
-console.log(resultadoPrimeiraVaga);
+console.log("Resultado de todas as vagas:");
+console.log(resultados);
