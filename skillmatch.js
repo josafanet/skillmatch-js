@@ -174,45 +174,59 @@ function criarContadorDeAnalises() {
   };
 }
 
-console.log("Candidato cadastrado:");
-console.log(candidato);
+function buscarVagasSimuladas() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(vagas);
+    }, 1000);
+  });
+}
 
-console.log("Vagas cadastradas:");
-console.log(vagas);
+async function iniciarSistema() {
+  console.log("Candidato cadastrado:");
+  console.log(candidato);
+  console.log("Buscando vagas simuladas...");
 
-const resultados = analisarVagas(candidato, vagas);
-const melhorVaga = encontrarMelhorVaga(resultados);
-const vagaEncontrada = buscarVagaPorEmpresa(vagas, "Escalado Tech");
-const atendeTodosRequisitos = verificarTodosRequisitos(
-  candidato,
-  vagaEncontrada
-);
-const recomendacaoEstudo = gerarRecomendacaoEstudo(resultados);
-const contarAnalise = criarContadorDeAnalises();
-let totalDeAnalises = 0;
+  const vagasCarregadas = await buscarVagasSimuladas();
+  console.log("Vagas carregadas com sucesso:");
+  console.log(vagasCarregadas);
 
-resultados.forEach(() => {
-  totalDeAnalises = contarAnalise();
-});
+  const resultados = analisarVagas(candidato, vagasCarregadas);
+  const melhorVaga = encontrarMelhorVaga(resultados);
+  const vagaEncontrada = buscarVagaPorEmpresa(vagasCarregadas, "Escalado Tech");
+  const atendeTodosRequisitos = verificarTodosRequisitos(
+    candidato,
+    vagaEncontrada
+  );
+  const recomendacaoEstudo = gerarRecomendacaoEstudo(resultados);
+  const contarAnalise = criarContadorDeAnalises();
+  let totalDeAnalises = 0;
 
-console.log("Resultado de todas as vagas:");
-console.log(resultados);
+  resultados.forEach(() => {
+    totalDeAnalises = contarAnalise();
+  });
 
-console.log("Vaga mais compativel:");
-console.log(melhorVaga);
+  console.log("Resultado de todas as vagas:");
+  console.log(resultados);
 
-console.log("Vaga localizada com find:");
-console.log(vagaEncontrada);
-console.log(vagaEncontrada.exibirResumo());
-console.log(vagaEncontrada.exibirNivel());
+  console.log("Vaga mais compativel:");
+  console.log(melhorVaga);
 
-console.log("Atende todos os requisitos?");
-console.log(atendeTodosRequisitos);
+  console.log("Vaga localizada com find:");
+  console.log(vagaEncontrada);
+  console.log(vagaEncontrada.exibirResumo());
+  console.log(vagaEncontrada.exibirNivel());
 
-console.log("Recomendacao de estudo:");
-console.log(recomendacaoEstudo);
+  console.log("Atende todos os requisitos?");
+  console.log(atendeTodosRequisitos);
 
-console.log("Total de vagas analisadas:");
-console.log(totalDeAnalises);
+  console.log("Recomendacao de estudo:");
+  console.log(recomendacaoEstudo);
 
-finalizarAnalise(candidato.nome, exibirMensagemFinal);
+  console.log("Total de vagas analisadas:");
+  console.log(totalDeAnalises);
+
+  finalizarAnalise(candidato.nome, exibirMensagemFinal);
+}
+
+iniciarSistema();
