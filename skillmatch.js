@@ -48,8 +48,35 @@ const vagas = [
   },
 ];
 
+function calcularCompatibilidade(perfilCandidato, vaga) {
+  const habilidadesEncontradas = vaga.requisitos.filter((requisito) =>
+    perfilCandidato.habilidades.includes(requisito)
+  );
+
+  const habilidadesFaltantes = vaga.requisitos.filter(
+    (requisito) => !perfilCandidato.habilidades.includes(requisito)
+  );
+
+  const percentual = Math.round(
+    (habilidadesEncontradas.length / vaga.requisitos.length) * 100
+  );
+
+  return {
+    empresa: vaga.empresa,
+    cargo: vaga.cargo,
+    percentual: percentual,
+    habilidadesEncontradas: habilidadesEncontradas,
+    habilidadesFaltantes: habilidadesFaltantes,
+  };
+}
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
 console.log("Vagas cadastradas:");
 console.log(vagas);
+
+const resultadoPrimeiraVaga = calcularCompatibilidade(candidato, vagas[0]);
+
+console.log("Resultado da primeira vaga:");
+console.log(resultadoPrimeiraVaga);
