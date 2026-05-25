@@ -154,6 +154,26 @@ function gerarRecomendacaoEstudo(resultadosDasVagas) {
   )}, pois esses conteudos aparecem nas vagas analisadas.`;
 }
 
+function finalizarAnalise(nomeCandidato, callback) {
+  console.log("Analise finalizada.");
+  callback(nomeCandidato);
+}
+
+function exibirMensagemFinal(nomeCandidato) {
+  console.log(
+    `${nomeCandidato}, revise as habilidades faltantes para melhorar seu perfil.`
+  );
+}
+
+function criarContadorDeAnalises() {
+  let total = 0;
+
+  return function () {
+    total++;
+    return total;
+  };
+}
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
@@ -168,6 +188,12 @@ const atendeTodosRequisitos = verificarTodosRequisitos(
   vagaEncontrada
 );
 const recomendacaoEstudo = gerarRecomendacaoEstudo(resultados);
+const contarAnalise = criarContadorDeAnalises();
+let totalDeAnalises = 0;
+
+resultados.forEach(() => {
+  totalDeAnalises = contarAnalise();
+});
 
 console.log("Resultado de todas as vagas:");
 console.log(resultados);
@@ -185,3 +211,8 @@ console.log(atendeTodosRequisitos);
 
 console.log("Recomendacao de estudo:");
 console.log(recomendacaoEstudo);
+
+console.log("Total de vagas analisadas:");
+console.log(totalDeAnalises);
+
+finalizarAnalise(candidato.nome, exibirMensagemFinal);
