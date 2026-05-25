@@ -142,7 +142,7 @@ O desenvolvimento foi organizado com branches descritivas:
 
 - Repositorio GitHub: [github.com/josafanet/skillmatch-js](https://github.com/josafanet/skillmatch-js)
 - Quadro Kanban: [trello.com - SkillMatch JS](https://trello.com/invite/b/6a0b917c7e202525b4034831/ATTI93add0e008e0d943573a597218c84aa264827C73/mini-projeto-front-end-skillmatch-js)
-- Video de apresentacao: adicionar link apos a gravacao.
+- Video de apresentacao: [video - SkillMatch JS](https://drive.google.com/file/d/1JvpAfUNXgABVJlKWuQ4SoGkQISvVbG9Q/view?usp=sharing)
 
 ## Possiveis Melhorias
 
