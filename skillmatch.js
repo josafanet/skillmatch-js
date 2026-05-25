@@ -7,7 +7,8 @@ const candidato = {
     "JavaScript",
     "GitHub",
     "Logica de Programacao",
-    "Kanban",
+    "Kanban", "HTML",
+    "CSS"
   ],
   experienciaMeses: 3,
   possuiPortfolio: true,
