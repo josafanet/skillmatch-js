@@ -28,38 +28,53 @@ class Vaga {
   }
 }
 
+class VagaFrontEnd extends Vaga {
+  constructor(id, empresa, cargo, requisitos, salario, modalidade, nivel) {
+    super(id, empresa, cargo, requisitos, salario, modalidade);
+    this.nivel = nivel;
+  }
+
+  exibirNivel() {
+    return `Nivel da vaga: ${this.nivel}`;
+  }
+}
+
 const vagas = [
-  new Vaga(
+  new VagaFrontEnd(
     1,
     "Odisy Digital",
     "Estagio Front-End",
     ["JavaScript", "GitHub", "Logica de Programacao", "HTML"],
     2800,
-    "Remoto"
+    "Remoto",
+    "Estagio"
   ),
-  new Vaga(
+  new VagaFrontEnd(
     2,
     "Escalado Tech",
     "Assistente de Desenvolvimento Web",
     ["JavaScript", "Kanban", "GitHub"],
     1800,
-    "Hibrido"
+    "Hibrido",
+    "Entrada"
   ),
-  new Vaga(
+  new VagaFrontEnd(
     3,
     "Ciclismo Web",
     "Programador JavaScript Junior",
     ["JavaScript", "Arrays", "Objetos", "Funcoes"],
     3000,
-    "Presencial"
+    "Presencial",
+    "Junior"
   ),
-  new Vaga(
+  new VagaFrontEnd(
     4,
     "Ungidos Pages",
     "Desenvolvedor Front-End Junior",
     ["HTML", "CSS", "JavaScript", "GitHub"],
     2200,
-    "Remoto"
+    "Remoto",
+    "Junior"
   ),
 ];
 
@@ -145,6 +160,7 @@ console.log(melhorVaga);
 console.log("Vaga localizada com find:");
 console.log(vagaEncontrada);
 console.log(vagaEncontrada.exibirResumo());
+console.log(vagaEncontrada.exibirNivel());
 
 console.log("Atende todos os requisitos?");
 console.log(atendeTodosRequisitos);
