@@ -137,6 +137,23 @@ function verificarTodosRequisitos(perfilCandidato, vaga) {
   );
 }
 
+function gerarRecomendacaoEstudo(resultadosDasVagas) {
+  const habilidadesFaltantes = resultadosDasVagas.reduce(
+    (lista, resultado) => lista.concat(resultado.habilidadesFaltantes),
+    []
+  );
+
+  const habilidadesUnicas = [...new Set(habilidadesFaltantes)];
+
+  if (habilidadesUnicas.length === 0) {
+    return "O candidato atende todos os requisitos analisados.";
+  }
+
+  return `Priorize estudar ${habilidadesUnicas.join(
+    ", "
+  )}, pois esses conteudos aparecem nas vagas analisadas.`;
+}
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
@@ -150,6 +167,7 @@ const atendeTodosRequisitos = verificarTodosRequisitos(
   candidato,
   vagaEncontrada
 );
+const recomendacaoEstudo = gerarRecomendacaoEstudo(resultados);
 
 console.log("Resultado de todas as vagas:");
 console.log(resultados);
@@ -164,3 +182,6 @@ console.log(vagaEncontrada.exibirNivel());
 
 console.log("Atende todos os requisitos?");
 console.log(atendeTodosRequisitos);
+
+console.log("Recomendacao de estudo:");
+console.log(recomendacaoEstudo);
