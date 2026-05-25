@@ -97,6 +97,16 @@ function encontrarMelhorVaga(resultadosDasVagas) {
   });
 }
 
+function buscarVagaPorEmpresa(listaDeVagas, empresaProcurada) {
+  return listaDeVagas.find((vaga) => vaga.empresa === empresaProcurada);
+}
+
+function verificarTodosRequisitos(perfilCandidato, vaga) {
+  return vaga.requisitos.every((requisito) =>
+    perfilCandidato.habilidades.includes(requisito)
+  );
+}
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
@@ -105,9 +115,20 @@ console.log(vagas);
 
 const resultados = analisarVagas(candidato, vagas);
 const melhorVaga = encontrarMelhorVaga(resultados);
+const vagaEncontrada = buscarVagaPorEmpresa(vagas, "Escalado Tech");
+const atendeTodosRequisitos = verificarTodosRequisitos(
+  candidato,
+  vagaEncontrada
+);
 
 console.log("Resultado de todas as vagas:");
 console.log(resultados);
 
 console.log("Vaga mais compativel:");
 console.log(melhorVaga);
+
+console.log("Vaga localizada com find:");
+console.log(vagaEncontrada);
+
+console.log("Atende todos os requisitos?");
+console.log(atendeTodosRequisitos);
