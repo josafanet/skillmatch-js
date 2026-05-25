@@ -7,8 +7,7 @@ const candidato = {
     "JavaScript",
     "GitHub",
     "Logica de Programacao",
-    "Kanban", "HTML",
-    "CSS"
+    "Kanban"
   ],
   experienciaMeses: 3,
   possuiPortfolio: true,
@@ -17,23 +16,23 @@ const candidato = {
 const vagas = [
   {
     id: 1,
-    empresa: "TechStart",
-    cargo: "Desenvolvedor Front-End Junior",
+    empresa: "Odisy Digital",
+    cargo: "Estagio Front-End",
     requisitos: ["JavaScript", "GitHub", "Logica de Programacao", "HTML"],
     salario: 2800,
     modalidade: "Remoto",
   },
   {
     id: 2,
-    empresa: "CodeLab",
-    cargo: "Estagio Front-End",
+    empresa: "Escalado Tech",
+    cargo: "Assistente de Desenvolvimento Web",
     requisitos: ["JavaScript", "Kanban", "GitHub"],
     salario: 1800,
     modalidade: "Hibrido",
   },
   {
     id: 3,
-    empresa: "WebSolutions",
+    empresa: "Ciclismo Web",
     cargo: "Programador JavaScript Junior",
     requisitos: ["JavaScript", "Arrays", "Objetos", "Funcoes"],
     salario: 3000,
@@ -41,8 +40,8 @@ const vagas = [
   },
   {
     id: 4,
-    empresa: "Creative Pages",
-    cargo: "Assistente de Desenvolvimento Web",
+    empresa: "Ungidos Pages",
+    cargo: "Desenvolvedor Front-End Junior",
     requisitos: ["HTML", "CSS", "JavaScript", "GitHub"],
     salario: 2200,
     modalidade: "Remoto",
