@@ -118,7 +118,7 @@ Neste projeto nao foi usada uma API real. A funcao `buscarVagasSimuladas()` usa 
 
 O acompanhamento do projeto foi realizado em um quadro Kanban no Trello, utilizando as colunas Backlog, A Fazer, Em Andamento e Concluido.
 
-[Quadro Kanban - SkillMatch JS](https://trello.com/invite/b/6a0b917c7e202525b4034831/ATTI93add0e008e0d943573a597218c84aa264827C73/mini-projeto-front-end-skillmatch-js)
+[Quadro Kanban - SkillMatch JS](https://trello.com/b/n3W3Kl6O)
 
 ## Versionamento
 
@@ -141,7 +141,7 @@ O desenvolvimento foi organizado com branches descritivas:
 ## Links Da Entrega
 
 - Repositorio GitHub: [github.com/josafanet/skillmatch-js](https://github.com/josafanet/skillmatch-js)
-- Quadro Kanban: [trello.com - SkillMatch JS](https://trello.com/invite/b/6a0b917c7e202525b4034831/ATTI93add0e008e0d943573a597218c84aa264827C73/mini-projeto-front-end-skillmatch-js)
+- Quadro Kanban: [trello.com - SkillMatch JS](https://trello.com/b/n3W3Kl6O)
 - Video de apresentacao: [video - SkillMatch JS](https://drive.google.com/file/d/1JvpAfUNXgABVJlKWuQ4SoGkQISvVbG9Q/view?usp=sharing)
 
 ## Possiveis Melhorias
