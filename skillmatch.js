@@ -13,39 +13,54 @@ const candidato = {
   possuiPortfolio: true,
 };
 
+class Vaga {
+  constructor(id, empresa, cargo, requisitos, salario, modalidade) {
+    this.id = id;
+    this.empresa = empresa;
+    this.cargo = cargo;
+    this.requisitos = requisitos;
+    this.salario = salario;
+    this.modalidade = modalidade;
+  }
+
+  exibirResumo() {
+    return `${this.cargo} na empresa ${this.empresa}`;
+  }
+}
+
 const vagas = [
-  {
-    id: 1,
-    empresa: "Odisy Digital",
-    cargo: "Estagio Front-End",
-    requisitos: ["JavaScript", "GitHub", "Logica de Programacao", "HTML"],
-    salario: 2800,
-    modalidade: "Remoto",
-  },
-  {
-    id: 2,
-    empresa: "Escalado Tech",
-    cargo: "Assistente de Desenvolvimento Web",
-    requisitos: ["JavaScript", "Kanban", "GitHub"],
-    salario: 1800,
-    modalidade: "Hibrido",
-  },
-  {
-    id: 3,
-    empresa: "Ciclismo Web",
-    cargo: "Programador JavaScript Junior",
-    requisitos: ["JavaScript", "Arrays", "Objetos", "Funcoes"],
-    salario: 3000,
-    modalidade: "Presencial",
-  },
-  {
-    id: 4,
-    empresa: "Ungidos Pages",
-    cargo: "Desenvolvedor Front-End Junior",
-    requisitos: ["HTML", "CSS", "JavaScript", "GitHub"],
-    salario: 2200,
-    modalidade: "Remoto",
-  },
+  new Vaga(
+    1,
+    "Odisy Digital",
+    "Estagio Front-End",
+    ["JavaScript", "GitHub", "Logica de Programacao", "HTML"],
+    2800,
+    "Remoto"
+  ),
+  new Vaga(
+    2,
+    "Escalado Tech",
+    "Assistente de Desenvolvimento Web",
+    ["JavaScript", "Kanban", "GitHub"],
+    1800,
+    "Hibrido"
+  ),
+  new Vaga(
+    3,
+    "Ciclismo Web",
+    "Programador JavaScript Junior",
+    ["JavaScript", "Arrays", "Objetos", "Funcoes"],
+    3000,
+    "Presencial"
+  ),
+  new Vaga(
+    4,
+    "Ungidos Pages",
+    "Desenvolvedor Front-End Junior",
+    ["HTML", "CSS", "JavaScript", "GitHub"],
+    2200,
+    "Remoto"
+  ),
 ];
 
 function classificarCompatibilidade(percentual) {
@@ -129,6 +144,7 @@ console.log(melhorVaga);
 
 console.log("Vaga localizada com find:");
 console.log(vagaEncontrada);
+console.log(vagaEncontrada.exibirResumo());
 
 console.log("Atende todos os requisitos?");
 console.log(atendeTodosRequisitos);
