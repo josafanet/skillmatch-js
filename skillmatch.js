@@ -87,6 +87,16 @@ const analisarVagas = (perfilCandidato, listaDeVagas) => {
   );
 };
 
+function encontrarMelhorVaga(resultadosDasVagas) {
+  return resultadosDasVagas.reduce((melhorVaga, vagaAtual) => {
+    if (vagaAtual.percentual > melhorVaga.percentual) {
+      return vagaAtual;
+    }
+
+    return melhorVaga;
+  });
+}
+
 console.log("Candidato cadastrado:");
 console.log(candidato);
 
@@ -94,6 +104,10 @@ console.log("Vagas cadastradas:");
 console.log(vagas);
 
 const resultados = analisarVagas(candidato, vagas);
+const melhorVaga = encontrarMelhorVaga(resultados);
 
 console.log("Resultado de todas as vagas:");
 console.log(resultados);
+
+console.log("Vaga mais compativel:");
+console.log(melhorVaga);
